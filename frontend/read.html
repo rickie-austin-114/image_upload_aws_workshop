@@ -1,0 +1,18 @@
+<div class="page">
+    <h2>Retrieve Image</h2>
+    <div>
+      <input type="text" ng-model="name" placeholder="Enter image name">
+      <button ng-click="getImage()" ng-disabled="loading">
+        {{ loading ? 'Loading...' : 'Get Image' }}
+      </button>
+      <button ng-click="goBack()">Back</button>
+    </div>
+    
+    <div ng-if="error" class="error">
+      {{ error }}
+    </div>
+    
+    <div ng-if="imageData">
+      <img ng-src="{{ imageData }}" alt="Retrieved image">
+    </div>
+  </div>
